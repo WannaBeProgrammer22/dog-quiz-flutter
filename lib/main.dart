@@ -79,7 +79,7 @@ class _QuizzyPageState extends State<QuizzyPage> {
         buttons: [
           DialogButton(
             child: Text(
-              "COOL",
+              "Okay",
               style: TextStyle(color: Colors.white, fontSize: 20),
             ),
             onPressed: () => Navigator.pop(context),
@@ -103,7 +103,6 @@ class _QuizzyPageState extends State<QuizzyPage> {
   @override
   Widget build(BuildContext context) {
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.stretch,
       children: <Widget>[
         Expanded(
           flex: 6,
@@ -121,6 +120,7 @@ class _QuizzyPageState extends State<QuizzyPage> {
                 ),
                 Text(
                   quizBrain.getQuestionText(),
+                  textAlign: TextAlign.center,
                   style: TextStyle(
                     fontWeight: FontWeight.w400,
                     fontSize: 30.0,
