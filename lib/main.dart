@@ -134,40 +134,44 @@ class _QuizzyPageState extends State<QuizzyPage> {
           child: Row(
             children: <Widget>[
               Expanded(
-                child: Container(
-                  margin: EdgeInsets.all(5.0),
+                child: Card(
                   color: Colors.green,
-                  child: FlatButton(
-                    onPressed: () {
+                  child: ListTile(
+                    onTap: () {
                       checkAnswer(true);
                     },
-                    child: Center(
-                      child: Text(
-                        'True',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 25.0,
-                        ),
+                    leading: Icon(
+                      Icons.check,
+                      color: Colors.white,
+                      size: 30.0,
+                    ),
+                    title: Text(
+                      'True',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 25.0,
                       ),
                     ),
                   ),
                 ),
               ),
               Expanded(
-                child: Container(
-                  margin: EdgeInsets.all(5.0),
+                child: Card(
                   color: Colors.red,
-                  child: FlatButton(
-                    onPressed: () {
+                  child: ListTile(
+                    onTap: () {
                       checkAnswer(false);
                     },
-                    child: Center(
-                      child: Text(
-                        'False',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 25.0,
-                        ),
+                    leading: Icon(
+                      Icons.close,
+                      color: Colors.white,
+                      size: 30.0,
+                    ),
+                    title: Text(
+                      'True',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 25.0,
                       ),
                     ),
                   ),
@@ -176,8 +180,11 @@ class _QuizzyPageState extends State<QuizzyPage> {
             ],
           ),
         ),
-        Row(
-          children: scoreKeeper,
+        Expanded(
+          flex: 1,
+          child: Row(
+            children: scoreKeeper,
+          ),
         )
       ],
     );
